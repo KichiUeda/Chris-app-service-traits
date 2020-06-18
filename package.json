@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "traits",
   "version": "",
-  "description": "",
-  "author": "",
+  "description": "Traits service",
+  "author": "Chris Hesterman",
   "license": "",
   "engines": {
     "node": ">=6.13.0"

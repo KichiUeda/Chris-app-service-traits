@@ -50,6 +50,11 @@ body {
 .thumbnail {
   margin: 5px auto;
   width: 135px;
+  margin: 0;
+  transition: 2s all;
+}
+.thumbnail:hover {
+  background-color: lightgreen;
 }
 
 .label {

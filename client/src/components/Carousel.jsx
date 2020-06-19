@@ -7,18 +7,13 @@ const Carousel = (props) => {
     <div>
       <h1 id="carousel">Carousel Mock Up</h1>
       <div className="carousel">
-        <div>
-          <Card />
-        </div>
-        <div>
-          <Card />
-        </div>
-        <div>
-          <Card />
-        </div>
-        <div>
-          <Card />
-        </div>
+        <Card />
+
+        <Card />
+
+        <Card />
+
+        <Card />
       </div>
     </div>
   );

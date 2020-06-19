@@ -1,0 +1,62 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #282c34;
+  color: #a1a7b2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  width: 100%;
+  text-align: center;
+}
+
+#carousel {
+  text-align: center;
+}
+
+.carousel {
+  width: 90vw;
+  display: flex;
+  justify-content: space-around;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10vh;
+}
+
+.card {
+  background-color: #fff;
+  color: #a1a7b2;
+  height: 221px;
+  width: 270px;
+}
+
+.image-container {
+  background-color: lightskyblue;
+  height: 168px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-around;
+}
+
+.thumbnail {
+  margin: 5px auto;
+  width: 135px;
+}
+
+.label {
+  height: 53px;
+  padding: 10px;
+}
+
+.trait {
+  margin: 0;
+}

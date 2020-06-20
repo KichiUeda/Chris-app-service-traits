@@ -23,9 +23,9 @@ CREATE TABLE `products` (
   PRIMARY KEY (`product_id`)
 );
 
--- ---
--- Foreign Keys
--- ---
+
+-- FOREIGN KEYS
+
 
 ALTER TABLE `traits_products` ADD FOREIGN KEY (trait_id) REFERENCES `traits` (`id`);
 ALTER TABLE `traits_products` ADD FOREIGN KEY (product_id) REFERENCES `products` (`product_id`);

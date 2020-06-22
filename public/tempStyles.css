@@ -48,13 +48,15 @@ body {
 }
 
 .thumbnail {
+  background-color: lightgreen;
   margin: 5px auto;
   width: 135px;
   margin: 0;
+  filter: grayscale(80%);
   transition: 2s all;
 }
 .thumbnail:hover {
-  background-color: lightgreen;
+  filter: grayscale(0%);
 }
 
 .label {

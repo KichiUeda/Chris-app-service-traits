@@ -18,8 +18,4 @@ connection.query('USE traitsDB', (err) => {
   console.log('using traitsDB');
 });
 
-connection.query(queryString, queryParams, (err, results) => {
-  return results;
-});
-
 module.exports.connection = connection;

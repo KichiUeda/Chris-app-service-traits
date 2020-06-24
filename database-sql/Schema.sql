@@ -11,8 +11,9 @@ CREATE TABLE `traits` (
 
 CREATE TABLE `traits_products` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `trait_id` INTEGER NULL DEFAULT NULL,
   `product_id` INTEGER NULL DEFAULT NULL,
+  `trait_id` INTEGER NULL DEFAULT NULL,
+
   PRIMARY KEY (`id`)
 );
 

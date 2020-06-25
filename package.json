@@ -21,7 +21,8 @@
     "mysql": "^2.18.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "sinon": "^9.0.2"
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

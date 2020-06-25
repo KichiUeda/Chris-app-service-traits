@@ -9,11 +9,15 @@ const connection = mysql.createConnection({
   database: 'traitsDB'
 });
 
-connection.connect();
+connection.connect((err) => {
+  if (err) {
+    throw err;
+  }
+});
 
 connection.query('USE traitsDB', (err) => {
   if (err) {
-    console.log(err);
+    throw err;
   }
   console.log('using traitsDB');
 });

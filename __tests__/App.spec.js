@@ -7,12 +7,12 @@ import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
 import Enzyme, { shallow, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import App from '../src/components/App.jsx';
-import Carousel from '../src/components/Carousel.jsx';
-import Card from '../src/components/Card.jsx';
-import ImageContainer from '../src/components/ImageContainer.jsx';
-import Label from '../src/components/Label.jsx';
-import Thumbnail from '../src/components/Thumbnail.jsx';
+import App from '../client/src/components/App.jsx';
+import Carousel from '../client/src/components/Carousel.jsx';
+import Card from '../client/src/components/Card.jsx';
+import ImageContainer from '../client/src/components/ImageContainer.jsx';
+import Label from '../client/src/components/Label.jsx';
+import Thumbnail from '../client/src/components/Thumbnail.jsx';
 
 global.expect = expect;
 Enzyme.configure({ adapter: new Adapter() });

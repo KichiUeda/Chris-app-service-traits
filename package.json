@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "build": "webpack --watch -d",
     "server": "nodemon server/server.js --ignore node_modules",
     "seedDB": "node database-sql/seed.js"
@@ -20,7 +20,8 @@
     "faker": "^4.1.0",
     "mysql": "^2.18.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sinon": "^9.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

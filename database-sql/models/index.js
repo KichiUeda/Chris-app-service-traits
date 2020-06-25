@@ -54,6 +54,16 @@ const fetchProductsForTrait = (traitStr) => {
   });
 };
 
+// ------------uncomment invocations and exports below to generate sample data for all products
+// fetchProductsForAllTraits();
+// fetchTraitsForAllProducts();
+module.exports.fetchTraitsForProduct = fetchTraitsForProduct;
+module.exports.fetchProductsForTrait = fetchProductsForTrait;
+// module.exports.fetchProductsForAllTraits = fetchProductsForAllTraits;
+// module.exports.fetchTraitsForAllProducts = fetchTraitsForAllProducts;
+
+// --------------also uncomment these functions and place above invocations
+
 // const fetchTraitsForAllProducts = () => {
 //   return new Promise((resolve, reject) => {
 //     const results = {};
@@ -87,10 +97,3 @@ const fetchProductsForTrait = (traitStr) => {
 //     resolve(results);
 //   });
 // };
-
-// fetchProductsForAllTraits();
-// fetchTraitsForAllProducts();
-module.exports.fetchTraitsForProduct = fetchTraitsForProduct;
-module.exports.fetchProductsForTrait = fetchProductsForTrait;
-// module.exports.fetchProductsForAllTraits = fetchProductsForAllTraits;
-// module.exports.fetchTraitsForAllProducts = fetchTraitsForAllProducts;

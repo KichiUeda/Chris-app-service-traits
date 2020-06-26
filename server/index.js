@@ -19,7 +19,7 @@ app.get('/traits/:product_id', (req, res) => {
     })
     .catch((err) => {
       if (err) {
-        console.log(err);
+        res.status(505).send(err, 'Please try again');
       }
     });
 });
@@ -33,7 +33,7 @@ app.get('/traits/products/:trait', (req, res) => {
     })
     .catch((err) => {
       if (err) {
-        console.log(err);
+        res.status(505).send(err, 'Please try again');
       }
     });
 });

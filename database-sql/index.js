@@ -13,7 +13,7 @@ connection.query('USE traitsDB', (error) => {
   if (error) {
     throw error;
   }
-  console.log('using traitsDB');
+  console.log('using traitsDB as id: ', connection.threadId);
 });
 
 module.exports.connection = connection;

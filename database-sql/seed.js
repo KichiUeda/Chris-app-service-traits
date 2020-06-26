@@ -10,11 +10,8 @@ const traitsToProductSeedQueryString =
   'INSERT INTO traits_products(product_id, trait_id) VALUES(?,?)';
 
 // general generator for types of words, decided to only use descriptors for the time being
-const generateArray = (array, type) => {
-  const word =
-    type === 'describe'
-      ? faker.fake('{{company.catchPhraseDescriptor}}')
-      : faker.fake('{{company.catchPhraseNoun}}');
+const generateArray = (array) => {
+  const word = faker.fake('{{company.catchPhraseDescriptor}}');
 
   if (!array.includes(word)) {
     array.push(word);
@@ -22,7 +19,7 @@ const generateArray = (array, type) => {
   if (array.length === 100) {
     return array;
   }
-  return generateArray(array, type);
+  return generateArray(array);
 };
 
 // insert items from an array into DB

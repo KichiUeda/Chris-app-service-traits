@@ -14,7 +14,19 @@ const request = require('supertest');
 // const expect = chai.expect;
 // chai.use(sinonChai);
 
-describe('Unit tests for server routes', () => {});
+// describe('Unit tests for server routes', () => {
+//   let getStub;
+//   beforeEach(() => {
+//     getStub = sinon.stub(app, 'get').returns({ statusCode: 200 });
+//   });
+//   afterEach(() => {
+//     getStub.restore();
+//   });
+//   it('Responds to GET req to /', () => {
+//     const result = request(app).getStub('/');
+//     expect(result.statusCode).toBe(200);
+//   });
+// });
 
 describe('Integration tests for server routes', () => {
   afterAll((done) => {
@@ -37,6 +49,15 @@ describe('Integration tests for server routes', () => {
         expect(response.body.product_id).toEqual('43');
         expect(response.body.traits.length).toEqual(3);
         expect(typeof response.body.traits[0]).toEqual('string');
+      });
+  });
+  test('Responds to GET req to "/traits/:product_id"', () => {
+    return request(app)
+      .get('/traits/products/heuristic')
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        expect(response.body.trait).toEqual('heuristic');
+        expect(typeof response.body.products[0]).toEqual('number');
       });
   });
 });

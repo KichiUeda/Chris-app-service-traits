@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/order */
 /* eslint-disable prefer-destructuring */
@@ -13,21 +14,14 @@ const request = require('supertest');
 // const expect = chai.expect;
 // chai.use(sinonChai);
 
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD,
-//   port: process.env.DB_PORT,
-//   database: 'traitsTestDB'
-// });
+describe('Unit tests for server routes', () => {});
 
-describe('express server', () => {
+describe('Integration tests for server routes', () => {
   afterAll((done) => {
     db.connection.destroy();
     app.close();
     done();
   });
-
   test('Responds to GET req to "/"', () => {
     return request(app)
       .get('/')
@@ -35,7 +29,6 @@ describe('express server', () => {
         expect(response.statusCode).toBe(200);
       });
   });
-
   test('Responds to GET req to "/traits/:product_id"', () => {
     return request(app)
       .get('/traits/43')

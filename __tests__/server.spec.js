@@ -4,10 +4,10 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable import/newline-after-import */
 require('dotenv').config();
-// const mysql = require('mysql');
+// const mysql = require('mysql');  //------Uncomment to run integration tests
 const sinon = require('sinon');
 // const sinonChai = require('sinon-chai');
-const db = require('../database-sql/index.js');
+// const db = require('../database-sql/index.js');
 const app = require('../server/index.js');
 const request = require('supertest');
 // const { expect } = require('chai');

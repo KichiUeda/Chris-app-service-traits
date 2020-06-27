@@ -5,28 +5,64 @@
 /* eslint-disable import/newline-after-import */
 require('dotenv').config();
 // const mysql = require('mysql');
-// const sinon = require('sinon');
+const sinon = require('sinon');
 // const sinonChai = require('sinon-chai');
 const db = require('../database-sql/index.js');
 const app = require('../server/index.js');
 const request = require('supertest');
+// const { expect } = require('chai');
 // const chai = require('chai');
 // const expect = chai.expect;
 // chai.use(sinonChai);
 
-// describe('Unit tests for server routes', () => {
-//   let getStub;
-//   beforeEach(() => {
-//     getStub = sinon.stub(app, 'get').returns({ statusCode: 200 });
-//   });
-//   afterEach(() => {
-//     getStub.restore();
-//   });
-//   it('Responds to GET req to /', () => {
-//     const result = request(app).getStub('/');
-//     expect(result.statusCode).toBe(200);
-//   });
-// });
+describe('Unit tests for server routes', () => {
+  let getStub;
+
+  afterAll((done) => {
+    app.close();
+    done();
+  });
+
+  beforeEach(() => {
+    getStub = sinon.stub(request(app), 'get');
+  });
+
+  afterEach(() => {
+    getStub.restore();
+  });
+
+  it('Responds to GET req to /', () => {
+    getStub.returns({ statusCode: 200 });
+    const result = getStub('/');
+
+    expect(result.statusCode).toBe(200);
+  });
+
+  it('Responds to GET req to /traits/:product_id', () => {
+    getStub.returns({
+      statusCode: 200,
+      body: { product_id: '43', traits: ['one', 'two', 'three'] }
+    });
+    const result = getStub('/traits/43');
+
+    expect(result.statusCode).toBe(200);
+    expect(result.body.product_id).toEqual('43');
+    expect(typeof result.body.traits[0]).toBe('string');
+  });
+
+  it('Responds to GET req to /traits/products/:trait', () => {
+    getStub.returns({
+      statusCode: 200,
+      body: { trait: 'heuristic', products: [1, 2, 3] }
+    });
+    const result = getStub('/traits/products/heuristic');
+
+    expect(result.statusCode).toBe(200);
+    expect(typeof result.body.trait).toBe('string');
+    expect(result.body.trait).toBe('heuristic');
+    expect(typeof result.body.products[0]).toBe('number');
+  });
+});
 
 describe('Integration tests for server routes', () => {
   afterAll((done) => {

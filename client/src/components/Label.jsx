@@ -1,10 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const LabelStyled = styled.div`
+  height: 53px;
+  padding: 10px;
+`;
+
+const TraitStyled = styled.h2`
+  margin: 0;
+`;
 
 const Label = (props) => {
   return (
-    <div className="label">
-      <h2 className="trait">Trait Label</h2>
-    </div>
+    <LabelStyled>
+      <TraitStyled>Trait Label</TraitStyled>
+    </LabelStyled>
   );
 };
 

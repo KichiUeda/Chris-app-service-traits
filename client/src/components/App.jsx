@@ -2,10 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Carousel from './Carousel.jsx';
-<<<<<<< Updated upstream
-=======
 import GlobalStyle from '../GlobalStyle.js';
->>>>>>> Stashed changes
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>This will be Traits service hello</h1>
+        {/* <h1>This will be Traits service hello</h1> */}
         <GlobalStyle />
         <Carousel />
       </div>

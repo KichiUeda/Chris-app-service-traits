@@ -12,9 +12,9 @@ body {
   background-color: #282c34;
   color: #a1a7b2;
   height: 100%;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 #Traits {

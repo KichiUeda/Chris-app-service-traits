@@ -14,11 +14,7 @@ body {
   align-items: center;
 } */
 
-<<<<<<< Updated upstream
-#app {
-=======
 /* #Traits {
->>>>>>> Stashed changes
   width: 100%;
   text-align: center;
 } */
@@ -51,7 +47,7 @@ body {
   align-items: space-around;
 } */
 
-.thumbnail {
+/* .thumbnail {
   background-color: lightgreen;
   margin: 5px auto;
   width: 135px;
@@ -61,13 +57,13 @@ body {
 }
 .thumbnail:hover {
   filter: grayscale(0%);
-}
+} */
 
-.label {
+/* .label {
   height: 53px;
   padding: 10px;
-}
+} */
 
-.trait {
+/* .trait {
   margin: 0;
-}
+} */

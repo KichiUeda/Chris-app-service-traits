@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import ImageContainer from './ImageContainer.jsx';
 import Label from './Label.jsx';
 
-const CardWrapper = styled.div``;
+const CardWrapper = styled.div`
+  text-align: center;
+`;
 
 const CardContainer = styled.div`
   background-color: #fff;

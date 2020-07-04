@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Carousel from './Carousel.jsx';
 import GlobalStyle from '../GlobalStyle.js';
-
+        
 class App extends React.Component {
   constructor(props) {
     super(props);

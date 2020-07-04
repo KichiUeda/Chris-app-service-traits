@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Carousel from './Carousel.jsx';
 // import GlobalStyle from '../GlobalStyle.js';
+
 const AppWrapper = styled.div`
   width: 100%;
   height: 339px;
@@ -12,6 +13,7 @@ const AppStyled = styled.div`
   height: 269px;
   color: #a1a7b2;
 `;
+
 class App extends React.Component {
   constructor(props) {
     super(props);

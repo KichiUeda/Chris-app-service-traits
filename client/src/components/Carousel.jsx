@@ -5,13 +5,13 @@ import Card from './Card.jsx';
 
 const CardWrapper = styled.div`
   display: block;
+  width: 100vw;
 `;
 const CardContainer = styled.div`
-  width: 90vw;
   display: flex;
   justify-content: space-around;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 5vw;
+  margin-left: 5vw;
   margin-bottom: 10vh;
 `;
 

@@ -1,4 +1,4 @@
-html {
+/* html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -12,42 +12,41 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-#Traits {
   width: 100%;
   text-align: center;
-}
+} */
 
-#carousel {
+/* #carousel {
   text-align: center;
-}
+} */
 
-.carousel {
+/* .carousel {
   width: 90vw;
   display: flex;
   justify-content: space-around;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 10vh;
-}
+} */
 
-.card {
+/* .card {
   background-color: #fff;
   color: #a1a7b2;
   height: 221px;
   width: 270px;
-}
+} */
 
-.image-container {
+/* .image-container {
   background-color: lightskyblue;
   height: 168px;
   display: flex;
   flex-wrap: wrap;
   align-items: space-around;
-}
+} */
 
-.thumbnail {
+/* .thumbnail {
   background-color: lightgreen;
   margin: 5px auto;
   width: 135px;
@@ -57,13 +56,13 @@ body {
 }
 .thumbnail:hover {
   filter: grayscale(0%);
-}
+} */
 
-.label {
+/* .label {
   height: 53px;
   padding: 10px;
-}
+} */
 
-.trait {
+/* .trait {
   margin: 0;
-}
+} */

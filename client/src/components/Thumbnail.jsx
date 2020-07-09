@@ -24,6 +24,7 @@ class Thumbnail extends React.Component {
 
   handleClick(e) {
     console.log('productId ', this.state.product_id);
+    console.log(window.location.pathname);
   }
 
   render() {

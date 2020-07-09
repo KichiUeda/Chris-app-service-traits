@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const axios = require('axios');
 // const db = require('../database-sql');
 const fetchers = require('../database-sql/models');
+const { restart } = require('nodemon');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/traits/:product_id', (req, res) => {
+  console.log(req.params.product_id);
   const traits = fetchers.fetchTraitsForProduct(req.params.product_id);
   traits
     .then((results) => {
@@ -28,24 +30,26 @@ app.get('/traits/:product_id', (req, res) => {
             }
           }
         });
+        res.set({ 'Access-Control-Allow-Origin': '*' });
+        res.send(JSON.stringify(resultsFinal));
         const imagesNeeded = resultsFinal.reduce((acc, result) => {
           return acc.concat(result.products);
         }, []);
-        console.log(imagesNeeded);
+        console.log('products to Micko', imagesNeeded);
         const requestArray = encodeURI(JSON.stringify(imagesNeeded));
-        const requestURL = `http://127.0.0.1:3000/api/${requestArray}?type=thumbnail`;
-        console.log(requestURL);
-        axios
-          .get(requestURL)
-          .then((results) => {
-            console.log(results.body);
-          })
-          .catch((err) => {
-            if (err) {
-              res.status(505).send('Please try again');
-            }
-          });
-        // res.send(requestArray);
+        // const requestURL = `http://127.0.0.1:3000/api/${requestArray}?type=thumbnail`;
+        // console.log(requestURL);
+        // axios
+        //   .get(requestURL)
+        //   .then((results) => {
+        //     console.log(results.body);
+        //   })
+        //   .catch((err) => {
+        //     if (err) {
+        //       res.status(505).send('Please try again');
+        //     }
+        //   });
+        // res.send(traitProducts);
       });
     })
     .catch((err) => {

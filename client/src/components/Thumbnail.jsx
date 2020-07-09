@@ -13,12 +13,27 @@ const ThumbnailStyled = styled.div`
   }
 `;
 
-const Thumbnail = (props) => {
-  return (
-    <ThumbnailStyled>
-      <h3>image</h3>
-    </ThumbnailStyled>
-  );
-};
+class Thumbnail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      product_id: 1
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    console.log('productId ', this.state.product_id);
+  }
+
+  render() {
+    return (
+      <ThumbnailStyled onClick={this.handleClick}>
+        <h3>image</h3>
+        <img src={this.props.thumbnail} alt="game image"></img>
+      </ThumbnailStyled>
+    );
+  }
+}
 
 export default Thumbnail;

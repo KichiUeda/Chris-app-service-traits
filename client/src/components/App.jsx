@@ -7,8 +7,13 @@ import GlobalStyle from '../GlobalStyle.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      product_id: 1,
+      product_data: {}
+    };
   }
+
+  componentDidMount() {}
 
   render() {
     return (

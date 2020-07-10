@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
+// import { createGlobalStyle } from 'styled-components';
+
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -18,7 +19,7 @@ body {
   align-items: center; */
 }
 
-#Traits {
+ #Traits {
   width: 100%;
 }
 `;

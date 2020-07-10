@@ -11,6 +11,7 @@ body {
   padding: 0;
   background-color: #282c34;
   color: #a1a7b2;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   /* height: 100%; */
   /* display: flex;
   justify-content: center;
@@ -19,7 +20,6 @@ body {
 
 #Traits {
   width: 100%;
-  text-align: center;
 }
 `;
 

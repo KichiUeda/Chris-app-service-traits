@@ -1,13 +1,19 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
 const LabelStyled = styled.div`
   height: 53px;
   padding: 10px;
+  color: #494f5c;
+  box-sizing: border-box;
+  display: flex;
 `;
 
-const TraitStyled = styled.h2`
+const TraitStyled = styled.span`
   margin: 0;
+  font-size: 14px;
+  font-weight: bold;
 `;
 
 const Label = (props) => {

@@ -3,11 +3,13 @@ import styled from 'styled-components';
 
 const ThumbnailStyled = styled.div`
   background-color: lightgreen;
+  background: ${(props) => `url(${props.image})`};
+  background-size: cover;
   margin: 5px auto;
   width: 135px;
   margin: 0;
-  filter: grayscale(80%);
-  transition: 2s all;
+  filter: grayscale(90%);
+  transition: 0.4s all;
   &:hover {
     filter: grayscale(0%);
   }
@@ -16,15 +18,12 @@ const ThumbnailStyled = styled.div`
 class Thumbnail extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   product_id: 1
-    // };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
-    console.log('productId ', this.props.thumb);
-    window.location.pathname = `/${this.props.thumb}/`;
+    console.log('productId ', this.props.id);
+    window.location.pathname = `/${this.props.id}/`;
   }
 
   // componentDidMount() {
@@ -33,12 +32,7 @@ class Thumbnail extends React.Component {
 
   render() {
     console.log(this.props);
-    return (
-      <ThumbnailStyled onClick={this.handleClick}>
-        <h3>{this.props.thumb}</h3>
-        {/* <img src={this.props.thumbnail} alt="game image"></img> */}
-      </ThumbnailStyled>
-    );
+    return <ThumbnailStyled onClick={this.handleClick} image={this.props.thumb} />;
   }
 }
 

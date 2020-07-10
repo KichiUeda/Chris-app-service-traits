@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
@@ -15,10 +16,10 @@ const ImageContainer = (props) => {
   // console.log(props.thumbs);
   return (
     <ContainerStyled>
-      <Thumbnail thumb={props.thumbnails[0]} />
-      <Thumbnail thumb={props.thumbnails[1]} />
-      <Thumbnail thumb={props.thumbnails[2]} />
-      <Thumbnail thumb={props.thumbnails[3]} />
+      <Thumbnail thumb={props.thumbnails[0].thumbnail} id={props.thumbnails[0].product_id} />
+      <Thumbnail thumb={props.thumbnails[1].thumbnail} id={props.thumbnails[1].product_id} />
+      <Thumbnail thumb={props.thumbnails[2].thumbnail} id={props.thumbnails[2].product_id} />
+      <Thumbnail thumb={props.thumbnails[3].thumbnail} id={props.thumbnails[3].product_id} />
     </ContainerStyled>
   );
 };

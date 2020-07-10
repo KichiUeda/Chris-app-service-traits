@@ -5,8 +5,11 @@ import styled from 'styled-components';
 import Card from './Card.jsx';
 
 const CardWrapper = styled.div`
-  display: block;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 257px;
+
 `;
 const CardContainer = styled.div`
   display: flex;
@@ -15,17 +18,20 @@ const CardContainer = styled.div`
   margin-left: 5vw;
   margin-bottom: 10vh;
 `;
+const HeaderStyled = styled.p`
+  padding-left: 8vw;
+`;
 
 const Carousel = (props) => {
   console.log('Carousel ', props);
   return (
     <CardWrapper>
-      {/* <h1 id="carousel">Carousel Mock Up</h1> */}
+      <HeaderStyled>TRAITS</HeaderStyled>
       <CardContainer>
-        <Card thumbs={props.thumbsTraits[0]} />
-        <Card thumbs={props.thumbsTraits[1]} />
-        <Card thumbs={props.thumbsTraits[2]} />
-        <Card thumbs={props.thumbsTraits[3]} />
+        <Card thumbsNlabel={props.traitThumbs[0]} />
+        <Card thumbsNlabel={props.traitThumbs[1]} />
+        <Card thumbsNlabel={props.traitThumbs[2]} />
+        <Card thumbsNlabel={props.traitThumbs[3]} />
       </CardContainer>
     </CardWrapper>
   );

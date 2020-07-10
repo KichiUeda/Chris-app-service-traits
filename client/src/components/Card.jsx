@@ -19,10 +19,9 @@ const Card = (props) => {
   console.log('card ', props);
   return (
     <CardWrapper>
-      <h2>Card</h2>
       <CardContainer>
-        <ImageContainer thumbnails={props.thumbs.products} />
-        <Label trait={props.thumbs.trait} />
+        <ImageContainer thumbnails={props.thumbsNlabel} />
+        <Label trait={props.thumbsNlabel.pop()} />
       </CardContainer>
     </CardWrapper>
   );

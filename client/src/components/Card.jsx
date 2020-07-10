@@ -16,12 +16,13 @@ const CardContainer = styled.div`
 `;
 
 const Card = (props) => {
+  console.log('card ', props);
   return (
     <CardWrapper>
       <h2>Card</h2>
       <CardContainer>
-        <ImageContainer />
-        <Label />
+        <ImageContainer thumbnails={props.thumbs.products} />
+        <Label trait={props.thumbs.trait} />
       </CardContainer>
     </CardWrapper>
   );

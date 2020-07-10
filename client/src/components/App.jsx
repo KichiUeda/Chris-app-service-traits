@@ -13,7 +13,23 @@ class App extends React.Component {
     super(props);
     this.state = {
       product_id: window.location.pathname,
-      product_data: []
+      product_data: [
+        {
+          trait: 'upward-trending',
+          products: [17, 23, 33, 66, 70, 72, 89, 99]
+        },
+        { trait: 'homogeneous', products: [4, 19, 33, 41, 66, 81] },
+        { trait: 'demand-driven', products: [25, 28, 33, 44] },
+        {
+          trait: 'tangible',
+          products: [19, 33, 45, 71, 74, 81, 86, 96, 100]
+        },
+        {
+          trait: 'full-range',
+          products: [18, 23, 27, 33, 52, 53, 58, 73, 79]
+        },
+        { trait: 'foreground', products: [29, 32, 33, 43, 56] }
+      ]
     };
     this.fetchImages = this.fetchImages.bind(this);
   }
@@ -46,7 +62,7 @@ class App extends React.Component {
       <div>
         {/* <h1>This will be Traits service hello</h1> */}
         <GlobalStyle />
-        <Carousel />
+        <Carousel thumbsTraits={this.state.product_data} />
       </div>
     );
   }

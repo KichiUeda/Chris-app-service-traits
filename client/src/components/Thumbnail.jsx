@@ -16,22 +16,27 @@ const ThumbnailStyled = styled.div`
 class Thumbnail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      product_id: 1
-    };
+    // this.state = {
+    //   product_id: 1
+    // };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
-    console.log('productId ', this.state.product_id);
-    console.log(window.location.pathname);
+    console.log('productId ', this.props.thumb);
+    window.location.pathname = `/${this.props.thumb}/`;
   }
 
+  // componentDidMount() {
+  //   this.setState({ product_id: this.props.product });
+  // }
+
   render() {
+    console.log(this.props);
     return (
       <ThumbnailStyled onClick={this.handleClick}>
-        <h3>image</h3>
-        <img src={this.props.thumbnail} alt="game image"></img>
+        <h3>{this.props.thumb}</h3>
+        {/* <img src={this.props.thumbnail} alt="game image"></img> */}
       </ThumbnailStyled>
     );
   }

@@ -13,7 +13,7 @@ const TraitStyled = styled.h2`
 const Label = (props) => {
   return (
     <LabelStyled>
-      <TraitStyled>Trait Label</TraitStyled>
+      <TraitStyled>{props.trait}</TraitStyled>
     </LabelStyled>
   );
 };

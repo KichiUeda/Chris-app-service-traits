@@ -36,7 +36,7 @@ const fetchTraitsForProduct = (id) => {
   });
 };
 
-const fetchProductsForTrait = (traitStr) => {
+const fetchProductsForTrait = (traitStr, id) => {
   return new Promise((resolve, reject) => {
     db.connection.query(fetchProductsForTraitQueryString, [traitStr], (err, products) => {
       if (err) {
@@ -45,6 +45,7 @@ const fetchProductsForTrait = (traitStr) => {
       const productsArray = products.map((product) => {
         return product.product_id;
       });
+
       const productsObj = {
         trait: traitStr,
         products: productsArray

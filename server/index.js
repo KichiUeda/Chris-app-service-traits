@@ -14,23 +14,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/traits/:product_id', (req, res) => {
-  console.log(req.params.product_id);
-  const traits = fetchers.fetchTraitsForProduct(req.params.product_id);
+  const id = req.params.product_id;
+  const traits = fetchers.fetchTraitsForProduct(id);
   traits
     .then((results) => {
       const traitProducts = results.traits.reduce((acc, trait) => {
-        return acc.concat(fetchers.fetchProductsForTrait(trait));
+        return acc.concat(fetchers.fetchProductsForTrait(trait, id));
       }, []);
       Promise.all(traitProducts).then((resultsFinal) => {
         resultsFinal.forEach((result) => {
+          console.log('results', result.products);
+          // if (result.products.indexOf(req.params.product_id) >= 0) {
+          //   console.log('duplicate!');
+          // }
           while (result.products.length < 4) {
             let filler = Math.ceil(Math.random() * 100);
-            if (!result.products.includes(filler)) {
+            if (!result.products.includes(filler) && !result.products.includes(id)) {
               result.products.push(filler);
             }
           }
         });
         res.set({ 'Access-Control-Allow-Origin': '*' });
+        console.log(resultsFinal);
         res.send(JSON.stringify(resultsFinal));
         const imagesNeeded = resultsFinal.reduce((acc, result) => {
           return acc.concat(result.products);

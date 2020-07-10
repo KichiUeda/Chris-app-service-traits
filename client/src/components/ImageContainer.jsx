@@ -12,12 +12,13 @@ const ContainerStyled = styled.div`
 `;
 
 const ImageContainer = (props) => {
+  // console.log(props.thumbs);
   return (
     <ContainerStyled>
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
+      <Thumbnail thumb={props.thumbnails[0]} />
+      <Thumbnail thumb={props.thumbnails[1]} />
+      <Thumbnail thumb={props.thumbnails[2]} />
+      <Thumbnail thumb={props.thumbnails[3]} />
     </ContainerStyled>
   );
 };

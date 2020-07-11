@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
+// import { createGlobalStyle } from 'styled-components';
+
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -14,7 +15,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-#Traits {
+ #Traits {
   width: 100%;
 }
 `;

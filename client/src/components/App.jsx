@@ -6,21 +6,12 @@ import React from 'react';
 import styled from 'styled-components';
 import defaultState from '../defaultState.js';
 import Carousel from './Carousel.jsx';
-// import GlobalStyle from '../GlobalStyle.js';
-
-const AppWrapper = styled.div`
-  width: 100%;
-  height: 339px;
-  background-color: #282c34;
-`;
-const AppStyled = styled.div`
-  height: 269px;
-  color: #a1a7b2;
-`;
+import GlobalStyle from '../GlobalStyle.js';
 
 const AppStyled = styled.div`
   height: 339px;
 `;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +23,6 @@ class App extends React.Component {
     // eslint-disable-next-line react/destructuring-assignment
     const requestURL = `http://127.0.0.1:3005/traits${id}`;
     // eslint-disable-next-line no-undef
-    console.log(requestURL);
     fetch(requestURL)
       .then((response) => {
         return response.json();
@@ -53,11 +43,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        {/* <h1>This will be Traits service hello</h1> */}
+      <AppStyled>
         <GlobalStyle />
         <Carousel traitThumbs={this.state.product_data} />
-      </div>
+      </AppStyled>
 
     );
   }

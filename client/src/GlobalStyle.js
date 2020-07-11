@@ -12,10 +12,6 @@ body {
   background-color: #282c34;
   color: #a1a7b2;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  /* height: 100%; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 #Traits {

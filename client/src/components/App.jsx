@@ -22,7 +22,6 @@ class App extends React.Component {
     // eslint-disable-next-line react/destructuring-assignment
     const requestURL = `http://127.0.0.1:3005/traits${id}`;
     // eslint-disable-next-line no-undef
-    console.log(requestURL);
     fetch(requestURL)
       .then((response) => {
         return response.json();
@@ -43,11 +42,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        {/* <h1>This will be Traits service hello</h1> */}
+      <AppStyled>
         <GlobalStyle />
         <Carousel traitThumbs={this.state.product_data} />
-      </div>
+      </AppStyled>
     );
   }
 }

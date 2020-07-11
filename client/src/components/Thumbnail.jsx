@@ -22,16 +22,10 @@ class Thumbnail extends React.Component {
   }
 
   handleClick(e) {
-    console.log('productId ', this.props.id);
     window.location.pathname = `/${this.props.id}/`;
   }
 
-  // componentDidMount() {
-  //   this.setState({ product_id: this.props.product });
-  // }
-
   render() {
-    console.log(this.props);
     return <ThumbnailStyled onClick={this.handleClick} image={this.props.thumb} />;
   }
 }

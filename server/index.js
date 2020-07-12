@@ -54,6 +54,7 @@ app.get('/traits/:product_id', (req, res) => {
               return response.data;
             });
             // console.log('productArray', productArray);
+            // eslint-disable-next-line no-plusplus
             for (let i = 0; i < productArray.length; i++) {
               if (
                 productArray[i].every((item) => {
@@ -69,10 +70,10 @@ app.get('/traits/:product_id', (req, res) => {
           })
           .then((resToClient) => {
             res.set({ 'Access-Control-Allow-Origin': '*' });
-            res.send(resToClient);
+            res.status(200).send(resToClient);
           })
           .catch((err) => {
-            throw err;
+            res.status(505).send('there was a problem');
           });
       })
       .catch((err) => {
@@ -82,18 +83,13 @@ app.get('/traits/:product_id', (req, res) => {
       });
   });
 });
-// .catch((err) => {
-//   if (err) {
-//     res.status(505).send('Please try again');
-//   }
-// });
 
 app.get('/traits/products/:trait', (req, res) => {
   console.log(req.params);
   fetchers
     .fetchProductsForTrait(req.params.trait)
     .then((result) => {
-      res.send(result);
+      res.status(200).send(result);
     })
     .catch((err) => {
       if (err) {

@@ -44,11 +44,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <AppStyled>
         {/* <h1>This will be Traits service hello</h1> */}
         <GlobalStyle />
         <Carousel traitThumbs={this.state.product_data} />
-      </div>
+      </AppStyled>
     );
   }
 }

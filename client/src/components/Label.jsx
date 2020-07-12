@@ -14,6 +14,7 @@ const TraitStyled = styled.span`
   margin: 0;
   font-size: 14px;
   font-weight: bold;
+  text-transform: uppercase;
 `;
 
 const Label = (props) => {

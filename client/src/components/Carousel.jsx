@@ -23,6 +23,7 @@ const HeaderStyled = styled.p`
 `;
 
 const Carousel = (props) => {
+  // console.log('Carousel ', props);
   return (
     <CardWrapper>
       <HeaderStyled>TRAITS</HeaderStyled>

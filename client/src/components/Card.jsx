@@ -16,7 +16,7 @@ const CardContainer = styled.div`
 `;
 
 const Card = (props) => {
-  console.log('card ', props);
+  // console.log('card ', props);
   return (
     <CardWrapper>
       <CardContainer>

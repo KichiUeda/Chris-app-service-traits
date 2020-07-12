@@ -9,7 +9,7 @@ const ThumbnailStyled = styled.div`
   width: 135px;
   margin: 0;
   filter: grayscale(90%);
-  transition: 0.4s all;
+  transition: 0.4s all ease-in;
   &:hover {
     filter: grayscale(0%);
   }
@@ -20,6 +20,7 @@ class Thumbnail extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
+
 
   handleClick(e) {
     window.location.pathname = `/${this.props.id}/`;

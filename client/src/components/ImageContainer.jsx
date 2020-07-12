@@ -13,7 +13,6 @@ const ContainerStyled = styled.div`
 `;
 
 const ImageContainer = (props) => {
-  // console.log(props.thumbs);
   return (
     <ContainerStyled>
       <Thumbnail thumb={props.thumbnails[0].thumbnail} id={props.thumbnails[0].product_id} />

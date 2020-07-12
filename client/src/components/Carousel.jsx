@@ -9,13 +9,13 @@ const CardWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 257px;
+
 `;
 const CardContainer = styled.div`
-  width: 90vw;
   display: flex;
   justify-content: space-around;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 5vw;
+  margin-left: 5vw;
   margin-bottom: 10vh;
 `;
 const HeaderStyled = styled.p`
@@ -23,7 +23,7 @@ const HeaderStyled = styled.p`
 `;
 
 const Carousel = (props) => {
-  console.log('Carousel ', props);
+  // console.log('Carousel ', props);
   return (
     <CardWrapper>
       <HeaderStyled>TRAITS</HeaderStyled>

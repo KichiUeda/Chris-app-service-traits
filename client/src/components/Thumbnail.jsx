@@ -9,7 +9,7 @@ const ThumbnailStyled = styled.div`
   width: 135px;
   margin: 0;
   filter: grayscale(90%);
-  transition: 0.4s all;
+  transition: 0.4s all ease-in;
   &:hover {
     filter: grayscale(0%);
   }
@@ -21,17 +21,12 @@ class Thumbnail extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+
   handleClick(e) {
-    console.log('productId ', this.props.id);
     window.location.pathname = `/${this.props.id}/`;
   }
 
-  // componentDidMount() {
-  //   this.setState({ product_id: this.props.product });
-  // }
-
   render() {
-    console.log(this.props);
     return <ThumbnailStyled onClick={this.handleClick} image={this.props.thumb} />;
   }
 }

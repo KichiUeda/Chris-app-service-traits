@@ -21,17 +21,12 @@ class Thumbnail extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    console.log('productId ', this.props.id);
+
+  handleClick(e) {
     window.location.pathname = `/${this.props.id}/`;
   }
 
-  // componentDidMount() {
-  //   this.setState({ product_id: this.props.product });
-  // }
-
   render() {
-    console.log('traitProductId: ', this.props.id);
     return <ThumbnailStyled onClick={this.handleClick} image={this.props.thumb} />;
   }
 }

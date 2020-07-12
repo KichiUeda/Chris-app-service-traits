@@ -11,6 +11,7 @@ import GlobalStyle from '../GlobalStyle.js';
 const AppStyled = styled.div`
   height: 339px;
 `;
+
 class App extends React.Component {
   constructor(props) {
     super(props);

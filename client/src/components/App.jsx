@@ -11,6 +11,7 @@ import GlobalStyle from '../GlobalStyle.js';
 const AppStyled = styled.div`
   height: 339px;
 `;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -45,7 +46,6 @@ class App extends React.Component {
   render() {
     return (
       <AppStyled>
-        {/* <h1>This will be Traits service hello</h1> */}
         <GlobalStyle />
         <Carousel traitThumbs={this.state.product_data} />
       </AppStyled>

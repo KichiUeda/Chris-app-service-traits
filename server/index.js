@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.get('/traits/:product_id', (req, res) => {
   const id = +req.params.product_id;
   const traits = fetchers.fetchTraitsForProduct(id);
+
   traits.then((traitsData) => {
     const traitProducts = traitsData.traits.reduce((acc, trait) => {
       return acc.concat(fetchers.fetchProductsForTrait(trait, id));
@@ -25,9 +26,10 @@ app.get('/traits/:product_id', (req, res) => {
         // console.log('-----rFinal', resultsFinal);
         resultsFinal.forEach((result) => {
           if (result.products.indexOf(id) >= 0) {
-            let filteredProducts = result.products.filter((product) => {
+            const filteredProducts = result.products.filter((product) => {
               return product !== id;
             });
+            // eslint-disable-next-line no-param-reassign
             result.products = filteredProducts;
           }
           while (result.products.length < 4) {
@@ -52,9 +54,9 @@ app.get('/traits/:product_id', (req, res) => {
               return response.data;
             });
             // console.log('productArray', productArray);
-            for (var i = 0; i < productArray.length; i++) {
+            for (let i = 0; i < productArray.length; i++) {
               if (
-                productArray[i].every((item, index) => {
+                productArray[i].every((item) => {
                   return resultsFinal[i].products.includes(item.product_id);
                 })
               ) {

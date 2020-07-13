@@ -9,8 +9,8 @@ const CardWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 257px;
-
 `;
+
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-around;

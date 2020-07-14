@@ -30,7 +30,7 @@ const ArrowStyled = styled.i`
   padding-right: 8px;
   padding-left: 8px;
   color: #929599;
-  transition: color 0.5s ease-in;
+  transition: color 0.3s ease-out;
   &:hover {
     cursor: pointer;
     color: white;

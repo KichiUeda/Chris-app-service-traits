@@ -1,22 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-html {
-  margin: 0;
-  padding: 0;
-  /* height: 100%; */
-}
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #282c34;
-  color: #a1a7b2;
-  overflow-x: hidden;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
 
  #Traits {
-  width: 100%;
+   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 339px;
+  margin: 0;
+  padding: 0;
 }
 `;
 

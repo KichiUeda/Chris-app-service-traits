@@ -6,6 +6,7 @@ import Label from './Label.jsx';
 
 const CardWrapper = styled.div`
   text-align: center;
+  margin: 0;
 `;
 
 const CardContainer = styled.div`

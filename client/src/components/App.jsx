@@ -8,9 +8,33 @@ import axios from 'axios';
 import defaultState from '../defaultState.js';
 import Carousel from './Carousel.jsx';
 import GlobalStyle from '../GlobalStyle.js';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const AppStyled = styled.div`
+  box-sizing: border-box;
   height: 339px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 35px 0;
+  background: #282c34;
+  color: #a1a7b2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+const ArrowStyled = styled.i`
+  align-self: center;
+  font-size: 45px;
+  padding-top: 55px;
+  padding-right: 8px;
+  padding-left: 8px;
+  color: #929599;
+  transition: color 0.3s ease-out;
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
 `;
 
 class App extends React.Component {
@@ -46,7 +70,13 @@ class App extends React.Component {
     return (
       <AppStyled>
         <GlobalStyle />
+        <ArrowStyled>
+          <FiChevronLeft />
+        </ArrowStyled>
         <Carousel traitThumbs={this.state.product_data} />
+        <ArrowStyled>
+          <FiChevronRight />
+        </ArrowStyled>
       </AppStyled>
     );
   }

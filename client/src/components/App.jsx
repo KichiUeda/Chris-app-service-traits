@@ -13,6 +13,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 const AppStyled = styled.div`
   box-sizing: border-box;
   height: 339px;
+  width: 100%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 35px 0;

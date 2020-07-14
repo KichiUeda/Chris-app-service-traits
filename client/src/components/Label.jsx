@@ -12,7 +12,7 @@ const LabelStyled = styled.div`
 
 const TraitStyled = styled.span`
   margin: 0;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: bold;
   text-transform: uppercase;
 `;

@@ -25,11 +25,11 @@ app.get('/traits/:product_id', (req, res) => {
         // console.log('-----rFinal', resultsFinal);
         resultsFinal.forEach((result) => {
           if (result.products.indexOf(id) >= 0) {
-            const filteredProducts = result.products.filter((product) => {
+            result.products = result.products.filter((product) => {
               return product !== id;
             });
             // eslint-disable-next-line no-param-reassign
-            result.products = filteredProducts;
+            // result.products = filteredProducts;
           }
           while (result.products.length < 4) {
             const filler = Math.ceil(Math.random() * 100);
@@ -72,7 +72,8 @@ app.get('/traits/:product_id', (req, res) => {
             res.status(200).send(resToClient);
           })
           .catch((err) => {
-            res.status(505).send('there was a problem');
+            console.log(err);
+            res.status(500).send('there was a problem');
           });
       })
       .catch((err) => {
@@ -92,7 +93,7 @@ app.get('/traits/products/:trait', (req, res) => {
     })
     .catch((err) => {
       if (err) {
-        res.status(505).send(err, 'Please try again');
+        res.status(500).send(err, 'Please try again');
       }
     });
 });

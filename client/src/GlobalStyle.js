@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-
 const GlobalStyle = createGlobalStyle`
 html {
   margin: 0;
@@ -12,6 +11,7 @@ body {
   padding: 0;
   background-color: #282c34;
   color: #a1a7b2;
+  overflow-x: hidden;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 

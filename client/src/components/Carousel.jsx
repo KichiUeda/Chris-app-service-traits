@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable import/extensions */
 import React from 'react';
@@ -9,8 +10,8 @@ const CardWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 257px;
-
 `;
+
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-around;

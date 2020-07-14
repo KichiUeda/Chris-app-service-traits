@@ -4,6 +4,7 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import defaultState from '../defaultState.js';
 import Carousel from './Carousel.jsx';
 import GlobalStyle from '../GlobalStyle.js';
@@ -25,13 +26,11 @@ class App extends React.Component {
     // eslint-disable-next-line no-undef
     console.log(requestURL);
     // eslint-disable-next-line no-undef
-    fetch(requestURL)
+    axios
+      .get(requestURL)
       .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log('New Data', data);
-        this.setState({ product_data: data });
+        console.log('New Data', response.data);
+        this.setState({ product_data: response.data });
       })
       .catch((err) => {
         throw err;

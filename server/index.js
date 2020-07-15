@@ -18,6 +18,7 @@ app.get('/traits/:product_id', (req, res) => {
 
   traits.then((traitsData) => {
     const traitProducts = traitsData.traits.reduce((acc, trait) => {
+      console.log(acc);
       return acc.concat(fetchers.fetchProductsForTrait(trait, id));
     }, []);
     Promise.all(traitProducts)

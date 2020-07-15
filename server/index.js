@@ -50,7 +50,7 @@ app.get('/traits/:product_id', (req, res) => {
           )
           .then((resArray) => {
             const productArray = resArray.map((response) => {
-              // console.log(response.data);
+              console.log(response.data);
               return response.data;
             });
             // console.log('productArray', productArray);

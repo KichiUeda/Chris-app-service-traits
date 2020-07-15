@@ -13,6 +13,7 @@
     "p_build": "webpack -p",
     "p_start": "node server/server.js",
     "start": "nodemon server/server.js --ignore node_modules",
+    "p_start": "node server/server.js",
     "seedDB": "node database-sql/seed.js"
   },
   "dependencies": {

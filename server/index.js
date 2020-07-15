@@ -18,12 +18,11 @@ app.get('/traits/:product_id', (req, res) => {
 
   traits.then((traitsData) => {
     const traitProducts = traitsData.traits.reduce((acc, trait) => {
-      console.log(acc);
       return acc.concat(fetchers.fetchProductsForTrait(trait, id));
     }, []);
     Promise.all(traitProducts)
       .then((resultsFinal) => {
-        // console.log('-----rFinal', resultsFinal);
+        console.log('-----rFinal', resultsFinal);
         resultsFinal.forEach((result) => {
           if (result.products.indexOf(id) >= 0) {
             result.products = result.products.filter((product) => {

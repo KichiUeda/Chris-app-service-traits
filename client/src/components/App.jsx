@@ -48,7 +48,7 @@ class App extends React.Component {
   fetchImages(id) {
     // eslint-disable-next-line react/destructuring-assignment
     // const requestURL = `http://127.0.0.1:3005/traits${id}`;
-    const requestURL = `http://ec2-3-129-17-238.us-east-2.compute.amazonaws.com/:3005/traits${id}`;
+    const requestURL = `http://ec2-3-129-17-68.us-east-2.compute.amazonaws.com:3005/traits${id}`;
     // eslint-disable-next-line no-undef
     console.log(requestURL);
     // eslint-disable-next-line no-undef

@@ -5,10 +5,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import defaultState from '../defaultState.js';
 import Carousel from './Carousel.jsx';
 import GlobalStyle from '../GlobalStyle.js';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const AppStyled = styled.div`
   box-sizing: border-box;

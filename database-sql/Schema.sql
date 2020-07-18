@@ -31,4 +31,4 @@ ALTER TABLE `traits_products` ADD FOREIGN KEY (product_id) REFERENCES `products`
 
 
 /* create database by running the following in terminal (from the repo root directory) :
-mysql -u root < database-sql/Schema.sql     --------*/
+mysql -u 'root' < database-sql/Schema.sql     --------*/

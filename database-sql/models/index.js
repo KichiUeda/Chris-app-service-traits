@@ -1,4 +1,7 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({
+  path: path.resolve(__dirname, '../../.env')
+});
 const db = require('../index.js');
 // const seed = require('../seed.js');
 
@@ -36,7 +39,7 @@ const fetchTraitsForProduct = (id) => {
   });
 };
 
-const fetchProductsForTrait = (traitStr, id) => {
+const fetchProductsForTrait = (traitStr) => {
   return new Promise((resolve, reject) => {
     db.connection.query(fetchProductsForTraitQueryString, [traitStr], (err, products) => {
       if (err) {

@@ -1,13 +1,9 @@
 /* eslint-disable no-console */
+const path = require('path');
+require('dotenv').config({
+  path: path.resolve(__dirname, '../.env')
+});
 const mysql = require('mysql');
-
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD,
-//   port: process.env.DB_PORT,
-//   database: 'traitsDB'
-// });
 
 const connection = mysql.createConnection({
   host: 'localhost',

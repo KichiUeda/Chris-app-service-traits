@@ -27,6 +27,7 @@ const fetchTraitsForProduct = (id) => {
       if (err) {
         reject(err);
       }
+      console.log(id);
       const traitsArray = traits.map((trait) => {
         return trait.trait;
       });

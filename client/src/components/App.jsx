@@ -47,8 +47,8 @@ class App extends React.Component {
 
   fetchImages(id) {
     // eslint-disable-next-line react/destructuring-assignment
-    if (!id) {
-      id = 21;
+    if (id === '/') {
+      id = '/21';
     }
     const requestURL = `http://127.0.0.1:3005/traits${id}`;
     // const requestURL = `http://ec2-3-129-17-68.us-east-2.compute.amazonaws.com:3005/traits${id}`;
@@ -67,8 +67,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const id = window.location.pathname;
-    this.fetchImages(id);
+    this.fetchImages(window.location.pathname);
   }
 
   render() {

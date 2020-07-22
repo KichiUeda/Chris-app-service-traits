@@ -11,7 +11,7 @@ const fetchers = require('../database-sql/models');
 
 const app = express();
 
-app.use(express.static('public', { fallthrough: true }));
+app.use('/', express.static('public', { fallthrough: true }));
 app.use('/:product_id', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

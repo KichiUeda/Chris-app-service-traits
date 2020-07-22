@@ -11,9 +11,17 @@ const fetchers = require('../database-sql/models');
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('public', { fallthrough: true }));
+app.use('/:product_id', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.get('/:product_id', (req, res) => {
+  console.log('request recieved with id', req.params.product_id);
+  const product_id = req.params.product_id;
+  res.redirect(`/traits/${product_id}`);
+  res.end();
+});
 
 app.get('/traits/:product_id', (req, res) => {
   const id = +req.params.product_id;
@@ -45,7 +53,6 @@ app.get('/traits/:product_id', (req, res) => {
           .all(
             resultsFinal.map((result) => {
               const requestArray = encodeURI(JSON.stringify(result.products));
-              // const requestURL = `http://127.0.0.1:3001/api/${requestArray}?type=thumbnail`;
               const requestURL = `http://ec2-52-14-126-227.us-east-2.compute.amazonaws.com:3001/api/${requestArray}?type=thumbnail`;
 
               return axios.get(requestURL);

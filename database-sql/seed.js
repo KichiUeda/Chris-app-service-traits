@@ -47,7 +47,7 @@ const seedDB = (array, queryString) => {
 
 // create array of product to trait mappings, three traits for every product
 const mapTraitsToProducts = (array) => {
-  const length = Math.ceil(Math.random() * 3 + 4);
+  const length = Math.ceil(Math.random() * 4 + 4);
   const products = [];
   for (let j = 1; j <= array.length; j++) {
     const indexes = [];

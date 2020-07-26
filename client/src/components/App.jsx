@@ -43,6 +43,7 @@ class App extends React.Component {
     super(props);
     this.state = defaultState;
     this.fetchImages = this.fetchImages.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   fetchImages(id) {
@@ -66,8 +67,26 @@ class App extends React.Component {
       });
   }
 
+  handleClick(e) {
+    const direction = e.currentTarget.className.baseVal;
+    let indexes = this.state.onDisplayIndexes.slice();
+    const last = indexes[indexes.length - 1];
+    const first = indexes[0];
+    if (direction === 'right' && last < this.state.product_data.length - 1) {
+      indexes = indexes.map((index) => {
+        return index + 1;
+      });
+    }
+    if (direction === 'left' && first > 0) {
+      indexes = indexes.map((index) => {
+        return index - 1;
+      });
+    }
+    this.setState({ onDisplayIndexes: indexes });
+  }
+
   componentDidMount() {
-    this.fetchImages(window.location.pathname);
+    this.fetchImages(window.location.pathname.slice(0, -1));
   }
 
   render() {
@@ -75,11 +94,11 @@ class App extends React.Component {
       <AppStyled>
         <GlobalStyle />
         <ArrowStyled>
-          <FiChevronLeft />
+          <FiChevronLeft className="left" onClick={this.handleClick} />
         </ArrowStyled>
-        <Carousel traitThumbs={this.state.product_data} />
+        <Carousel traitThumbs={this.state.product_data} onDisplay={this.state.onDisplayIndexes} />
         <ArrowStyled>
-          <FiChevronRight />
+          <FiChevronRight className="right" onClick={this.handleClick} />
         </ArrowStyled>
       </AppStyled>
     );

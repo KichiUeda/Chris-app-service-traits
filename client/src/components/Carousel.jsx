@@ -16,9 +16,11 @@ const CardWrapper = styled.div`
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  width: 1140px;
+  margin: 0;
+  overflow-x: hidden;
+  width: ${(props) => `${props.size * 270}px`};
 `;
+
 const HeaderStyled = styled.h2`
   margin: 0 0 15px;
   font-size: 15px;
@@ -27,16 +29,14 @@ const HeaderStyled = styled.h2`
 `;
 
 const Carousel = (props) => {
-  // console.log('Carousel ', props);
+  const cards = props.onDisplay.map((index) => {
+    return <Card thumbsNlabel={props.traitThumbs[index]} key={index} />;
+  });
+
   return (
-    <CardWrapper>
+    <CardWrapper size={props.traitThumbs.length}>
       <HeaderStyled>TRAITS</HeaderStyled>
-      <CardContainer>
-        <Card thumbsNlabel={props.traitThumbs[0]} />
-        <Card thumbsNlabel={props.traitThumbs[1]} />
-        <Card thumbsNlabel={props.traitThumbs[2]} />
-        <Card thumbsNlabel={props.traitThumbs[3]} />
-      </CardContainer>
+      <CardContainer>{cards}</CardContainer>
     </CardWrapper>
   );
 };

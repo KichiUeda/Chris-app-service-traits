@@ -17,7 +17,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/:product_id', (req, res) => {
-  console.log('request recieved with id', req.params.product_id);
   const product_id = req.params.product_id;
   res.redirect(`/traits/${product_id}`);
   res.end();

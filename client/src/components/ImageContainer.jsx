@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Thumbnail from './Thumbnail.jsx';
 
 const ContainerStyled = styled.div`
-  background-color: lightskyblue;
+  background-color: #a1a7b2;
   height: 168px;
   display: flex;
   flex-wrap: wrap;

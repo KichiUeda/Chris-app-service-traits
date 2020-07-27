@@ -6,7 +6,7 @@ import Label from './Label.jsx';
 
 const CardWrapper = styled.div`
   text-align: center;
-  margin: 0;
+  margin: 0 20px 0 0;
 `;
 
 const CardContainer = styled.div`
@@ -17,12 +17,13 @@ const CardContainer = styled.div`
 `;
 
 const Card = (props) => {
-  // console.log('card ', props);
+  console.log('card ', props);
+  const newThumbArray = props.thumbsNlabel.slice();
   return (
     <CardWrapper>
       <CardContainer>
         <ImageContainer thumbnails={props.thumbsNlabel} />
-        <Label trait={props.thumbsNlabel.pop()} />
+        <Label trait={newThumbArray.pop()} />
       </CardContainer>
     </CardWrapper>
   );

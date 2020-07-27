@@ -1,6 +1,7 @@
 const defaultState = {
   // eslint-disable-next-line no-undef
   product_id: window.location.pathname,
+  onDisplayIndexes: [0, 1, 2, 3],
   product_data: [
     [
       {

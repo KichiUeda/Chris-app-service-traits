@@ -1,6 +1,9 @@
 /* eslint-disable import/newline-after-import */
 /* eslint-disable no-plusplus */
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({
+  path: path.resolve(__dirname, '../.env')
+});
 
 const faker = require('faker');
 const db = require('./index.js');
@@ -44,7 +47,7 @@ const seedDB = (array, queryString) => {
 
 // create array of product to trait mappings, three traits for every product
 const mapTraitsToProducts = (array) => {
-  const length = Math.ceil(Math.random() * 3 + 4);
+  const length = Math.ceil(Math.random() * 4 + 4);
   const products = [];
   for (let j = 1; j <= array.length; j++) {
     const indexes = [];

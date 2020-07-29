@@ -86,7 +86,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchImages(window.location.pathname.slice(0, -1));
+    this.fetchImages(window.location.pathname);
   }
 
   render() {

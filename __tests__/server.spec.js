@@ -63,37 +63,35 @@ describe('Unit tests for server routes', () => {
     expect(typeof result.body.products[0]).toBe('number');
   });
 });
-//----- WORKING INTEGRATION TESTS, UNCOMMENT TO USE--------
-// describe('Integration tests for server routes', () => {
-//   afterAll((done) => {
-//     db.connection.destroy();
-//     app.close();
-//     done();
-//   });
-//   test('Responds to GET req to "/"', () => {
-//     return request(app)
-//       .get('/')
-//       .then((response) => {
-//         expect(response.statusCode).toBe(200);
-//       });
-//   });
-//   test('Responds to GET req to "/traits/:product_id"', () => {
-//     return request(app)
-//       .get('/traits/43')
-//       .then((response) => {
-//         expect(response.statusCode).toBe(200);
-//         expect(response.body.product_id).toEqual('43');
-//         expect(response.body.traits.length).toEqual(3);
-//         expect(typeof response.body.traits[0]).toEqual('string');
-//       });
-//   });
-//   test('Responds to GET req to "/traits/:product_id"', () => {
-//     return request(app)
-//       .get('/traits/products/heuristic')
-//       .then((response) => {
-//         expect(response.statusCode).toBe(200);
-//         expect(response.body.trait).toEqual('heuristic');
-//         expect(typeof response.body.products[0]).toEqual('number');
-//       });
-//   });
-// });
+// ----- WORKING INTEGRATION TESTS, UNCOMMENT TO USE--------
+describe('Integration tests for server routes', () => {
+  afterAll((done) => {
+    db.connection.destroy();
+    app.close();
+    done();
+  });
+  // test('Responds to GET req to "/"', () => {
+  //   return request(app)
+  //     .get('/')
+  //     .then((response) => {
+  //       expect(response.statusCode).toBe(200);
+  //     });
+  // });
+  test('Responds to GET req to "/traits/:product_id"', () => {
+    return request(app)
+      .get('/traits/43')
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toEqual(expect.any(Array));
+      });
+  });
+  test('Responds to GET req to "/traits/products/:trait"', () => {
+    return request(app)
+      .get('/traits/products/heuristic')
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        expect(response.body.trait).toEqual('heuristic');
+        expect(typeof response.body.products[0]).toEqual('number');
+      });
+  });
+});

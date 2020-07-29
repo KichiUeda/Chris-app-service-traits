@@ -13,7 +13,6 @@
     "p_build": "webpack -p",
     "p_start": "node server/server.js",
     "start": "nodemon server/server.js --ignore node_modules",
-    "p_start": "node server/server.js",
     "seedDB": "node database-sql/seed.js"
   },
   "dependencies": {
@@ -23,6 +22,7 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mysql": "^2.18.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
@@ -39,6 +39,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "chai": "^4.2.0",
     "chai-enzyme": "^1.0.0-beta.1",
+    "check-prop-types": "^1.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",

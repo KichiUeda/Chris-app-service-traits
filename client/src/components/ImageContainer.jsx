@@ -2,6 +2,7 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Thumbnail from './Thumbnail.jsx';
 
 const ContainerStyled = styled.div`
@@ -13,14 +14,14 @@ const ContainerStyled = styled.div`
 `;
 
 const ImageContainer = (props) => {
-  return (
-    <ContainerStyled>
-      <Thumbnail thumb={props.thumbnails[0].thumbnail} id={props.thumbnails[0].product_id} />
-      <Thumbnail thumb={props.thumbnails[1].thumbnail} id={props.thumbnails[1].product_id} />
-      <Thumbnail thumb={props.thumbnails[2].thumbnail} id={props.thumbnails[2].product_id} />
-      <Thumbnail thumb={props.thumbnails[3].thumbnail} id={props.thumbnails[3].product_id} />
-    </ContainerStyled>
-  );
+  const thumbnails = props.thumbnails.map((thumb) => {
+    return <Thumbnail thumb={thumb.thumbnail} id={thumb.product_id} data-test="Thumbnail" />;
+  });
+  return <ContainerStyled>{thumbnails.slice(0, 4)}</ContainerStyled>;
+};
+
+ImageContainer.propTypes = {
+  thumbnails: PropTypes.array
 };
 
 export default ImageContainer;

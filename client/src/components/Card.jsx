@@ -18,7 +18,6 @@ const CardContainer = styled.div`
 `;
 
 const Card = (props) => {
-  console.log('card ', props);
   const newThumbArray = props.thumbsNlabel.slice();
   return (
     <CardWrapper>

@@ -106,3 +106,15 @@ describe('ImageContainer', () => {
     });
   });
 });
+
+// describe('Thumbnail', () => {
+//   describe(('Checking PropTypes', () {
+//     it('should not throw a warning', () => {
+//       const expectedProps = {
+//         thumb: 'I am a thumb',
+//         id: 5
+//       }
+//       const propsErr =
+//     })
+//   }))
+// })

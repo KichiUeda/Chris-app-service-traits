@@ -59,7 +59,6 @@ class App extends React.Component {
     axios
       .get(requestURL)
       .then((response) => {
-        // console.log('New Data', response.data);
         this.setState({ product_data: response.data });
       })
       .catch((err) => {

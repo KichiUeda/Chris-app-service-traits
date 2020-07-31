@@ -32,14 +32,12 @@ app.get('/traits/:product_id', (req, res) => {
     }, []);
     Promise.all(traitProducts)
       .then((resultsFinal) => {
-        console.log('-----rFinal', resultsFinal);
         resultsFinal.forEach((result) => {
           if (result.products.indexOf(id) >= 0) {
             result.products = result.products.filter((product) => {
               return product !== id;
             });
             // eslint-disable-next-line no-param-reassign
-            // result.products = filteredProducts;
           }
           while (result.products.length < 4) {
             const filler = Math.ceil(Math.random() * 100);
@@ -60,10 +58,9 @@ app.get('/traits/:product_id', (req, res) => {
           )
           .then((resArray) => {
             const productArray = resArray.map((response) => {
-              console.log(response.data);
+
               return response.data;
             });
-            // console.log('productArray', productArray);
             // eslint-disable-next-line no-plusplus
             for (let i = 0; i < productArray.length; i++) {
               if (

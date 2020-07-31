@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "test": "jest --detectOpenHandles --collectCoverage --watch",
+    "test": "jest --detectOpenHandles --collectCoverage",
     "build": "webpack --watch -d",
     "p_build": "webpack -p",
     "p_start": "node server/server.js",

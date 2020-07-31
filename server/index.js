@@ -49,6 +49,7 @@ app.get('/traits/:product_id', (req, res) => {
         axios
           .all(
             resultsFinal.map((result) => {
+              console.log(result.products);
               const requestArray = encodeURI(JSON.stringify(result.products));
               const requestURL = `http://ec2-52-14-126-227.us-east-2.compute.amazonaws.com:3001/api/${requestArray}?type=thumbnail`;
 
@@ -57,6 +58,7 @@ app.get('/traits/:product_id', (req, res) => {
           )
           .then((resArray) => {
             const productArray = resArray.map((response) => {
+
               return response.data;
             });
             // eslint-disable-next-line no-plusplus

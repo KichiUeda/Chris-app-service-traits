@@ -4,16 +4,9 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable import/newline-after-import */
 require('dotenv').config();
-// const mysql = require('mysql');  //------Uncomment to run integration tests
 const sinon = require('sinon');
-// const sinonChai = require('sinon-chai');
-// const db = require('../database-sql/index.js');
 const app = require('../server/index.js');
 const request = require('supertest');
-// const { expect } = require('chai');
-// const chai = require('chai');
-// const expect = chai.expect;
-// chai.use(sinonChai);
 
 describe('Unit tests for server routes', () => {
   let getStub;
@@ -61,37 +54,5 @@ describe('Unit tests for server routes', () => {
     expect(typeof result.body.trait).toBe('string');
     expect(result.body.trait).toBe('heuristic');
     expect(typeof result.body.products[0]).toBe('number');
-  });
-});
-// ----- WORKING INTEGRATION TESTS, UNCOMMENT TO USE--------
-describe('Integration tests for server routes', () => {
-  afterAll((done) => {
-    db.connection.destroy();
-    app.close();
-    done();
-  });
-  // test('Responds to GET req to "/"', () => {
-  //   return request(app)
-  //     .get('/')
-  //     .then((response) => {
-  //       expect(response.statusCode).toBe(200);
-  //     });
-  // });
-  test('Responds to GET req to "/traits/:product_id"', () => {
-    return request(app)
-      .get('/traits/43')
-      .then((response) => {
-        expect(response.statusCode).toBe(200);
-        expect(response.body).toEqual(expect.any(Array));
-      });
-  });
-  test('Responds to GET req to "/traits/products/:trait"', () => {
-    return request(app)
-      .get('/traits/products/heuristic')
-      .then((response) => {
-        expect(response.statusCode).toBe(200);
-        expect(response.body.trait).toEqual('heuristic');
-        expect(typeof response.body.products[0]).toEqual('number');
-      });
   });
 });

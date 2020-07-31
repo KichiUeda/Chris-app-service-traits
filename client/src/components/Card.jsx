@@ -1,6 +1,7 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import ImageContainer from './ImageContainer.jsx';
 import Label from './Label.jsx';
 
@@ -17,16 +18,19 @@ const CardContainer = styled.div`
 `;
 
 const Card = (props) => {
-  console.log('card ', props);
   const newThumbArray = props.thumbsNlabel.slice();
   return (
     <CardWrapper>
       <CardContainer>
-        <ImageContainer thumbnails={props.thumbsNlabel} />
-        <Label trait={newThumbArray.pop()} />
+        <ImageContainer thumbnails={props.thumbsNlabel} data-test="ImageContainer" />
+        <Label trait={newThumbArray.pop()} data-test="Label" />
       </CardContainer>
     </CardWrapper>
   );
+};
+
+Card.propTypes = {
+  thumbsNlabel: PropTypes.array
 };
 
 export default Card;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ThumbnailStyled = styled.div`
   background-color: lightgreen;
@@ -29,5 +30,10 @@ class Thumbnail extends React.Component {
     return <ThumbnailStyled onClick={this.handleClick} image={this.props.thumb} />;
   }
 }
+
+Thumbnail.propTypes = {
+  thumb: PropTypes.string,
+  id: PropTypes.number
+};
 
 export default Thumbnail;

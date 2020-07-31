@@ -27,7 +27,6 @@ const fetchTraitsForProduct = (id) => {
       if (err) {
         reject(err);
       }
-      console.log(id);
       const traitsArray = traits.map((trait) => {
         return trait.trait;
       });
@@ -59,46 +58,5 @@ const fetchProductsForTrait = (traitStr) => {
   });
 };
 
-// ------------uncomment invocations and exports below to generate sample data for all products
-// fetchProductsForAllTraits();
-// fetchTraitsForAllProducts();
 module.exports.fetchTraitsForProduct = fetchTraitsForProduct;
 module.exports.fetchProductsForTrait = fetchProductsForTrait;
-// module.exports.fetchProductsForAllTraits = fetchProductsForAllTraits;
-// module.exports.fetchTraitsForAllProducts = fetchTraitsForAllProducts;
-
-// --------------also uncomment these functions and place above invocations
-
-// const fetchTraitsForAllProducts = () => {
-//   return new Promise((resolve, reject) => {
-//     const results = {};
-//     for (let i = 1; i <= 100; i++) {
-//       fetchTraitsForProduct(i).then((result) => {
-//         const resultObj = {
-//           product_id: i,
-//           traits: result
-//         };
-//         results[i] = resultObj;
-//         console.log(results);
-//       });
-//     }
-//     resolve(results);
-//   });
-// };
-
-// const fetchProductsForAllTraits = () => {
-//   return new Promise((resolve, reject) => {
-//     const results = {};
-//     for (let i = 0; i < 100; i++) {
-//       fetchProductsForTrait(seed.traits[i]).then((result) => {
-//         const resultObj = {
-//           trait: result.trait,
-//           products: result.products
-//         };
-//         results[i + 1] = resultObj;
-//         console.log(results);
-//       });
-//     }
-//     resolve(results);
-//   });
-// };

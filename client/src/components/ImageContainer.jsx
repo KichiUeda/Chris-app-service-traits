@@ -15,7 +15,14 @@ const ContainerStyled = styled.div`
 
 const ImageContainer = (props) => {
   const thumbnails = props.thumbnails.map((thumb) => {
-    return <Thumbnail thumb={thumb.thumbnail} id={thumb.product_id} data-test="Thumbnail" />;
+    return (
+      <Thumbnail
+        thumb={thumb.thumbnail}
+        id={thumb.product_id}
+        key={thumb.product_id}
+        data-test="Thumbnail"
+      />
+    );
   });
   return <ContainerStyled>{thumbnails.slice(0, 4)}</ContainerStyled>;
 };

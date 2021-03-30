@@ -5,7 +5,6 @@ require('dotenv').config({
   path: path.resolve(__dirname, '../.env')
 });
 const express = require('express');
-const bodyParser = require('body-parser');
 const axios = require('axios');
 const fetchers = require('../database-sql/models');
 
@@ -13,11 +12,13 @@ const app = express();
 
 app.use('/', express.static('public', { fallthrough: true }));
 app.use('/:product_id', express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get('/:product_id', (req, res) => {
-  const product_id = req.params.product_id;
+  // eslint-disable-next-line camelcase
+  const { product_id } = req.params;
+  // eslint-disable-next-line camelcase
   res.redirect(`/traits/${product_id}`);
   res.end();
 });
@@ -34,6 +35,7 @@ app.get('/traits/:product_id', (req, res) => {
       .then((resultsFinal) => {
         resultsFinal.forEach((result) => {
           if (result.products.indexOf(id) >= 0) {
+            // eslint-disable-next-line no-param-reassign
             result.products = result.products.filter((product) => {
               return product !== id;
             });
@@ -58,7 +60,6 @@ app.get('/traits/:product_id', (req, res) => {
           )
           .then((resArray) => {
             const productArray = resArray.map((response) => {
-
               return response.data;
             });
             // eslint-disable-next-line no-plusplus

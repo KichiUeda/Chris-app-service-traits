@@ -6,7 +6,6 @@ const ThumbnailStyled = styled.div`
   background-color: lightgreen;
   background: ${(props) => `url(${props.image})`};
   background-size: cover;
-  margin: 5px auto;
   width: 135px;
   margin: 0;
   filter: saturate(20%);
